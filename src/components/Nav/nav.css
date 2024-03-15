@@ -1,0 +1,22 @@
+.nav-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 10vh;
+
+  background-color: lightblue;
+  border: 1px solid black;
+
+  .nav-btn {
+    margin: auto 5px;
+    padding: 10px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border: 1px solid green;
+  }
+
+  .nav-btn:hover {
+    cursor: pointer;
+  }
+}
