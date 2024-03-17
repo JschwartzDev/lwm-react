@@ -2,6 +2,9 @@ function Nav(props) {
   return (
     <nav className="nav-wrapper">
       <div className="nav-logo">Logo</div>
+      <div>
+        <h1 className="greeting-h1">Hello, Emit!</h1>
+      </div>
       <div className="nav-btn-group">
         {props.pages.map((page) => (
           <button

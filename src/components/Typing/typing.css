@@ -9,7 +9,7 @@
   background-color: aquamarine;
   border: 1px solid black;
 
-  .game-container {
+  .game-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,5 +27,71 @@
     min-height: 50vh;
     width: 25%;
     border: 1px solid black;
+    font-size: 6rem;
+    color: hsl(214, 94%, 75%);
+  }
+
+  .typing-nav-btn:hover {
+    cursor: pointer;
+  }
+
+  /*ALL STYLES THAT BELONG INSIDE OF THE GAME CONTENT WRAPPER*/
+  .game-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    width: 50%;
+
+    background-color: lightcyan;
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      font-size: 2rem;
+    }
+
+    .typing-word-div {
+      font-size: 5rem;
+      margin-bottom: 2rem;
+    }
+
+    .typing-input-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .typing-input {
+        width: 75%;
+        height: 3rem;
+        font-size: 3rem;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .game-wrapper {
+    flex-direction: column;
+
+    .typing-nav-btn {
+      width: 100%;
+      min-height: 25vh;
+    }
+
+    .game-content-wrapper {
+      width: 100%;
+
+      .stats {
+        font-size: 1.5rem;
+      }
+    }
   }
 }

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Typing from "../Typing/Typing";
 import Matching from "../Matching/Matching";
 
