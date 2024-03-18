@@ -1,8 +1,9 @@
 import Typing from "../Typing/Typing";
 import Matching from "../Matching/Matching";
+import Math from "../Math/Math";
 
 function Games(props) {
-  const games = ["typing", "matching"];
+  const games = ["typing", "matching", "math"];
 
   if (props.currentGame === "") {
     return (
@@ -22,6 +23,8 @@ function Games(props) {
     return <Typing />;
   } else if (props.currentGame === "matching") {
     return <Matching />;
+  } else if (props.currentGame === "math") {
+    return <Math />;
   }
 }
 

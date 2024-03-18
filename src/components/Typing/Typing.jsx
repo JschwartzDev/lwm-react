@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAnglesLeft,
-  faAnglesRight,
-  faCoffee,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAnglesLeft, faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 
 const sightWords = [
   "A",
@@ -111,7 +107,6 @@ const sightWords = [
 
 function Typing() {
   let rand = Math.floor(Math.random() * 100);
-  //const [counter, setCounter] = useState(rand);
   const [word, setWord] = useState(sightWords[rand]);
   const [input, setInput] = useState("");
   const [correct, setCorrect] = useState(0);
@@ -122,16 +117,18 @@ function Typing() {
     return Math.floor(Math.random() * 100);
   };
 
-  const handleNextWord = (input) => {
+  const handleNextWord = (input, word) => {
+    console.log(`Input: ${input}, Word: ${word}`);
     if (previousWords.length < 1) {
-      setPreviousWords([...previousWords, input]);
+      setPreviousWords([...previousWords, word]);
     } else {
       if (previousWords.indexOf(input) === -1) {
-        setPreviousWords([...previousWords, input]);
+        setPreviousWords([...previousWords, word]);
       }
     }
     if (input === word) {
       setCorrect((count) => {
+        setInput("");
         return count + 1;
       });
     } else {
@@ -181,7 +178,7 @@ function Typing() {
               onChange={(event) => {
                 if (event.target.value === word) {
                   setInput("");
-                  handleNextWord(event.target.value);
+                  handleNextWord(event.target.value, word);
                 } else {
                   if (word.indexOf(event.target.value) === -1) {
                     setInput(event.target.value.substring(0, input.length));
@@ -193,7 +190,10 @@ function Typing() {
             />
           </div>
         </div>
-        <div className="typing-nav-btn" onClick={() => handleNextWord(word)}>
+        <div
+          className="typing-nav-btn"
+          onClick={() => handleNextWord(input, word)}
+        >
           <FontAwesomeIcon icon={faAnglesRight} />
         </div>
       </div>

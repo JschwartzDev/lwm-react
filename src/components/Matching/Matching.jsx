@@ -159,6 +159,7 @@ function Matching() {
         }
       } else {
         //if flipped[0].content !== flipped[1].content set both cards .flipped to false
+
         shuffledCards[firstIndex].flipped = false;
         shuffledCards[secondIndex].flipped = false;
         //reset flipped array

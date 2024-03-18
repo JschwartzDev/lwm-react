@@ -18,7 +18,7 @@
     min-height: 75vh;
     width: 100%;
 
-    background-color: green;
+    background-color: peachpuff;
     border: 1px solid black;
   }
 
@@ -41,5 +41,29 @@
 
   .card:hover {
     cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .matching-wrapper {
+    .card {
+      font-size: 0.6rem;
+      min-height: 20vh;
+      width: 10%;
+      margin: 2px 2px;
+      background-size: fill !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .matching-wrapper {
+    .card {
+      font-size: 0.6rem;
+      min-height: 25vh;
+      width: 30%;
+      margin: 2px 2px;
+      background-size: fill !important;
+    }
   }
 }

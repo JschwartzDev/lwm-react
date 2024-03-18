@@ -1,0 +1,77 @@
+.math-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 90vh;
+
+  background-color: lightblue;
+  border: 1px solid black;
+
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 50vh;
+    width: 100%;
+
+    background-color: lightgreen;
+    border: 1px solid black;
+  }
+
+  .question-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 3rem;
+
+    border: 1px solid black;
+  }
+
+  .submit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid black;
+
+    .submit {
+      width: 25%;
+      padding: 1rem;
+      background-color: greenyellow;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .user-input {
+    font-size: 5rem;
+    height: 5rem;
+    width: 10%;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .math-wrapper {
+    .question-container {
+      font-size: 1rem;
+    }
+
+    .user-input {
+      font-size: 2rem;
+      height: 2rem;
+      width: 20%;
+    }
+
+    .submit-container {
+      .submit {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}
