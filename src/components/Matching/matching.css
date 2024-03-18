@@ -1,3 +1,7 @@
+:root {
+  --flip-card-height-sm: 20vh;
+}
+
 .matching-wrapper {
   display: flex;
   justify-content: center;
@@ -17,53 +21,152 @@
 
     min-height: 75vh;
     width: 100%;
-
-    background-color: peachpuff;
-    border: 1px solid black;
   }
 
-  .card {
+  /*
+ALL PASTED STUFF BELOW, DONT DELETE MEDIA QUERIES AT THE BOTTOM
+*/
+
+  .flip-card {
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform: rotateY(-180deg);
+  }
+
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  .flip-card {
+    background-color: transparent;
+    min-height: 30vh;
+    width: 10%;
+    margin: 0px 10px;
+    border-radius: 5px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    cursor: pointer;
+  }
+
+  .flip-card-image {
+    height: 30vh;
+    width: 100%;
+    box-shadow: 5px 5px 5px var(--sonic-gold);
+    border-radius: 5px;
+  }
+
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card-flip .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Position the front and back side */
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: var(--sonic-blue);
+    color: var(--sonic-gold);
+  }
+  .flip-card-front-background {
     display: flex;
     justify-content: center;
     align-items: center;
-
     min-height: 30vh;
-    width: 10%;
-
-    padding: 10px;
-    margin: 5px 10px;
-
-    background-color: lightgrey;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 10px 5px 5px hsl(0, 82%, 76%);
+    width: 100%;
+    border: 1px solid var(--sonic-gold);
+    border-radius: 5px;
+    background-color: var(--sonic-blue);
+    box-shadow: 5px 5px 5px var(--sonic-gold);
   }
 
-  .card:hover {
-    cursor: pointer;
+  /* Style the back side */
+  .flip-card-back {
+    transform: rotateY(180deg);
   }
 }
 
 @media only screen and (max-width: 992px) {
   .matching-wrapper {
-    .card {
+    .matching-game-container {
+      min-height: 50vh;
+    }
+
+    .flip-card {
+      background-color: transparent;
       font-size: 0.6rem;
-      min-height: 20vh;
-      width: 10%;
-      margin: 2px 2px;
-      background-size: fill !important;
+      min-height: 15vh;
+      width: 11%;
+
+      border-radius: 5px;
+      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+      cursor: pointer;
+    }
+
+    .flip-card-image {
+      height: 15vh;
+      width: 100%;
+      box-shadow: 5px 5px 5px var(--sonic-gold);
+      border-radius: 5px;
+    }
+
+    .flip-card-front-background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 15vh;
+      width: 100%;
+      border: 1px solid var(--sonic-gold);
+      border-radius: 5px;
+      background-color: var(--sonic-blue);
+      box-shadow: 5px 5px 5px var(--sonic-gold);
     }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .matching-wrapper {
-    .card {
+    .flip-card {
+      background-color: transparent;
       font-size: 0.6rem;
-      min-height: 25vh;
-      width: 30%;
-      margin: 2px 2px;
-      background-size: fill !important;
+      height: var(--flip-card-height-sm);
+      width: 25%;
+      margin: 10px 2px;
+      border-radius: 5px;
+      perspective: 1000px; /* Remove this if you don't want the 3D effect */
+      cursor: pointer;
+    }
+
+    .flip-card-image {
+      height: var(--flip-card-height-sm);
+      width: 100%;
+      box-shadow: 5px 5px 5px var(--sonic-gold);
+      border-radius: 5px;
+    }
+
+    .flip-card-front-background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: var(--flip-card-height-sm);
+      width: 100%;
+      border: 1px solid var(--sonic-gold);
+      border-radius: 5px;
+      background-color: var(--sonic-blue);
+      box-shadow: 5px 5px 5px var(--sonic-gold);
     }
   }
 }

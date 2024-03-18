@@ -5,16 +5,24 @@ import Math from "../Math/Math";
 function Games(props) {
   const games = ["typing", "matching", "math"];
 
+  const capitalizeFirstLetter = (str) => {
+    let arr = Array.from(str);
+    let capital = arr[0].toUpperCase();
+    arr.shift();
+    arr = [capital, ...arr];
+    return arr.join("");
+  };
+
   if (props.currentGame === "") {
     return (
-      <div className="menu-wrapper">
+      <div className="menu-wrapper wrapper-background">
         {games.map((game) => (
           <button
             key={game}
             className="games-menu-btn"
             onClick={(event) => props.handleGame(game)}
           >
-            {game}
+            {capitalizeFirstLetter(game)}
           </button>
         ))}
       </div>

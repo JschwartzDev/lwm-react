@@ -32,7 +32,7 @@ function MathGame(props) {
   const [input, setInput] = useState("");
 
   return (
-    <div className="math-wrapper">
+    <div className="math-wrapper wrapper-background">
       <div className="game-container">
         <div className="question-container">
           <h1>{`${num1} ${operator} ${num2}`} =</h1>

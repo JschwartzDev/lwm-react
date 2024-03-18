@@ -1,0 +1,13 @@
+.wrapper-background {
+  background-image: url("./src/assets/sonic-stage.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper-background {
+    background-image: url("./src/assets/sonic-stage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

@@ -15,23 +15,20 @@
     align-items: center;
     min-height: 50vh;
     width: 100vw;
-
-    background-color: lightgrey;
-    border: 1px solid black;
   }
 
   .typing-nav-btn {
     display: flex;
     justify-content: center;
     align-items: center;
+
     min-height: 50vh;
     width: 25%;
-    border: 1px solid black;
     font-size: 6rem;
-    color: hsl(214, 94%, 75%);
-  }
+    color: var(--sonic-gold);
 
-  .typing-nav-btn:hover {
+    border: 1px solid var(--sonic-gold);
+    border-radius: 5px;
     cursor: pointer;
   }
 
@@ -44,7 +41,9 @@
     min-height: 50vh;
     width: 50%;
 
-    background-color: lightcyan;
+    border-radius: 5px;
+    background-color: var(--sonic-blue);
+    color: var(--sonic-gold);
 
     .stats {
       display: flex;
@@ -72,6 +71,8 @@
         height: 3rem;
         font-size: 3rem;
         border-radius: 10px;
+        border: 1px solid var(--sonic-gold);
+        color: var(--sonic-blue);
       }
     }
   }

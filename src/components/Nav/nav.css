@@ -5,15 +5,21 @@
 
   height: 10vh;
 
-  background-color: lightblue;
+  background-color: var(--sonic-blue);
   border: 1px solid black;
+
+  .nav-logo {
+    width: 10%;
+    min-height: 12vh;
+  }
 
   .nav-btn {
     margin: auto 5px;
     padding: 10px;
-    background-color: greenyellow;
+    color: var(--sonic-gold);
+    background-color: var(--sonic-blue);
     border-radius: 5px;
-    border: 1px solid green;
+    border: 1px solid var(--sonic-gold);
   }
 
   .nav-btn:hover {
@@ -22,7 +28,7 @@
 
   .greeting-h1 {
     font-size: 2rem;
-    text-decoration: underline;
+    color: var(--sonic-gold);
   }
 }
 

@@ -1,16 +1,25 @@
-function Nav(props) {
+import Logo from "../../Assets/logo.png";
+
+function Nav({ pages, handleNav }) {
   return (
     <nav className="nav-wrapper">
-      <div className="nav-logo">Logo</div>
+      <div
+        className="nav-logo"
+        style={{
+          backgroundImage: `url(${Logo})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+        }}
+      ></div>
       <div>
-        <h1 className="greeting-h1">Hello, Emit!</h1>
+        <span className="greeting-h1">Hello, Emit!</span>
       </div>
       <div className="nav-btn-group">
-        {props.pages.map((page) => (
+        {pages.map((page) => (
           <button
             key={page}
             className="nav-btn"
-            onClick={(event) => props.handleNav(page)}
+            onClick={(event) => handleNav(page)}
           >
             {page}
           </button>

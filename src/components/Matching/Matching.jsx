@@ -128,16 +128,13 @@ function Matching() {
   const [trigger, setTrigger] = useState(0);
   const [shuffledDeck, setShuffledDeck] = useState(shuffledCards);
 
-  const handleFlipCard = (index) => {
-    shuffledCards[index].flipped = !shuffledCards[index].flipped;
-    let flipped = shuffledCards.filter((card) => card.flipped && !card.matched);
-    //console.log(flipped);
-
+  const handleCheckFlippedCards = (flipped) => {
     //if 2 flipped cards, run comparisons
     if (flipped.length === 2) {
       //grab the flipped cards position in the shuffled cards list to be used for later
       let firstIndex = shuffledCards.indexOf(flipped[0]);
       let secondIndex = shuffledCards.indexOf(flipped[1]);
+
       //if cards.content are equal, set cards.matched to true
       if (flipped[0].content === flipped[1].content) {
         shuffledCards[firstIndex].matched = true;
@@ -159,13 +156,20 @@ function Matching() {
         }
       } else {
         //if flipped[0].content !== flipped[1].content set both cards .flipped to false
-
         shuffledCards[firstIndex].flipped = false;
         shuffledCards[secondIndex].flipped = false;
         //reset flipped array
         flipped = [];
       }
     }
+  };
+
+  const handleFlipCard = (index) => {
+    shuffledCards[index].flipped = !shuffledCards[index].flipped;
+    let flipped = shuffledCards.filter((card) => card.flipped && !card.matched);
+
+    handleCheckFlippedCards(flipped);
+
     //cant tell what this does anymore but if i remove it it breaks
     setTrigger((trigger) => {
       setShuffledDeck(shuffledCards);
@@ -174,27 +178,32 @@ function Matching() {
   };
 
   return (
-    <div className="matching-wrapper">
+    <div className="matching-wrapper wrapper-background">
       <div className="matching-game-container">
         {shuffledDeck.map((card, index) => {
           return (
             <div
-              onClick={() => handleFlipCard(index)}
-              className="card"
+              onClick={(event) => handleFlipCard(index)}
               key={index}
-              style={
-                !card.flipped
-                  ? {
-                      backgroundImage: `url(${card.cardBack})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "cover",
-                    }
-                  : card.matched
-                  ? { opacity: "0" }
-                  : {}
+              className={
+                card.flipped ? "flip-card flip-card-flip" : "flip-card"
               }
+              style={card.matched ? { opacity: "0" } : {}}
             >
-              <h1>{card.flipped ? card.content : ""}</h1>
+              <div className="flip-card-inner">
+                <div className="flip-card-back">
+                  <img
+                    src={sonicTrimmed}
+                    className="flip-card-image"
+                    alt="sonic"
+                  />
+                </div>
+                <div className="flip-card-front">
+                  <div className="flip-card-front-background">
+                    <h1>{card.flipped ? card.content : ""}</h1>
+                  </div>
+                </div>
+              </div>
             </div>
           );
         })}

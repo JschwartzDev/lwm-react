@@ -16,9 +16,6 @@
 
     min-height: 50vh;
     width: 100%;
-
-    background-color: lightgreen;
-    border: 1px solid black;
   }
 
   .question-container {
@@ -27,8 +24,7 @@
     align-items: center;
     width: 100%;
     font-size: 3rem;
-
-    border: 1px solid black;
+    color: var(--sonic-gold);
   }
 
   .submit-container {
@@ -36,12 +32,13 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    border: 1px solid black;
 
     .submit {
       width: 25%;
       padding: 1rem;
-      background-color: greenyellow;
+      background-color: var(--sonic-blue);
+      color: var(--sonic-gold);
+      border: 1px solid var(--sonic-gold);
       border-radius: 5px;
       cursor: pointer;
     }
@@ -53,6 +50,7 @@
     width: 10%;
     margin-left: 10px;
     border-radius: 5px;
+    color: var(--sonic-blue);
   }
 }
 

@@ -7,18 +7,29 @@
   min-height: 90vh;
   width: 100%;
 
-  background-color: aquamarine;
+  background-color: var(--sonic-blue);
   border: 1px solid black;
 
   .games-menu-btn {
     height: 10rem;
     width: 10rem;
-    border-radius: 1rem;
+
     margin: auto 5px;
     padding: 10px;
-  }
 
-  .games-menu-btn:hover {
+    font-size: 2rem;
+    background-color: var(--sonic-blue);
+    color: var(--sonic-gold);
+    border: 1px solid var(--sonic-gold);
+    border-radius: 1rem;
     cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-wrapper {
+    .games-menu-btn {
+      margin: 5px 0px;
+    }
   }
 }
