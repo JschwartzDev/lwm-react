@@ -1,0 +1,74 @@
+.maze-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 90vh;
+  width: 100%;
+
+  background-color: var(--sonic-blue);
+  border: 1px solid black;
+
+  .game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50vh;
+    width: 100%;
+
+    border: 1px solid black;
+
+    .rotate {
+      transform: rotate3d(1, 0, 0, 180deg) rotate(-90deg);
+    }
+
+    .map {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      min-height: 50vh;
+      width: 50%;
+
+      border: 1px solid black;
+
+      .tile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 10vh;
+        width: 10vh;
+
+        border: 1px solid black;
+      }
+
+      .player {
+        min-height: 9vh;
+        width: 9vh;
+
+        border-radius: 50%;
+        border: 1px solid var(--sonic-gold);
+        background-color: var(--sonic-blue);
+      }
+
+      .goal {
+        min-height: 9vh;
+        width: 9vh;
+
+        border-radius: 50%;
+        border: 1px solid black;
+        background-color: purple;
+      }
+
+      .empty-tile {
+        background-color: lightgrey;
+      }
+
+      .wall-tile {
+        background-color: maroon;
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@ function Nav({ pages, handleNav }) {
           <button
             key={page}
             className="nav-btn"
-            onClick={(event) => handleNav(page)}
+            onClick={() => handleNav(page)}
           >
             {page}
           </button>

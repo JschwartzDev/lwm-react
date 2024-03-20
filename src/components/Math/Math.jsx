@@ -1,4 +1,6 @@
 import { useState } from "react";
+import motoPicSonic from "../../Assets/moto-pic-sonic.png";
+import motoPicShadow from "../../Assets/moto-pic-shadow.png";
 
 function MathGame(props) {
   const generateRandomNum = () => {
@@ -14,9 +16,11 @@ function MathGame(props) {
   };
 
   const handleCheckInput = () => {
-    if (Number(input) === eval(`${num1} ${operator} ${num2}`)) {
+    if (Number(input) === eval(setQuestion())) {
+      setIsCorrect(true);
       generateNewQuestion();
     } else {
+      setIsCorrect(false);
       setInput("");
     }
   };
@@ -26,16 +30,33 @@ function MathGame(props) {
     setNum2(generateRandomNum);
     setOperator(generateRandomOperator);
   };
+
+  const setQuestion = () => {
+    if (num1 > num2) {
+      return `${num1} ${operator} ${num2}`;
+    } else {
+      return `${num2} ${operator} ${num1}`;
+    }
+  };
   const [num1, setNum1] = useState(generateRandomNum());
   const [num2, setNum2] = useState(generateRandomNum());
   const [operator, setOperator] = useState(generateRandomOperator());
   const [input, setInput] = useState("");
+  const [isCorrect, setIsCorrect] = useState();
 
   return (
     <div className="math-wrapper wrapper-background">
+      <div className="motivational-pic">
+        <img
+          src={motoPicSonic}
+          alt="sonic"
+          className="moto-image"
+          style={isCorrect ? {} : { display: "none" }}
+        />
+      </div>
       <div className="game-container">
         <div className="question-container">
-          <h1>{`${num1} ${operator} ${num2}`} =</h1>
+          <h1>{setQuestion()} =</h1>
           <input
             type="text"
             className="user-input"
@@ -49,6 +70,14 @@ function MathGame(props) {
             Submit
           </button>
         </div>
+      </div>
+      <div className="motivational-pic">
+        <img
+          src={motoPicShadow}
+          alt="sonic"
+          className="moto-image"
+          style={!isCorrect ? {} : { display: "none" }}
+        />
       </div>
     </div>
   );

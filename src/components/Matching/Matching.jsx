@@ -122,6 +122,10 @@ function Matching() {
     return array;
   }
   const shuffledCards = useMemo(() => {
+    cards.forEach((card) => {
+      card.flipped = false;
+      card.matched = false;
+    });
     return shuffle(cards);
   }, []);
 
@@ -183,7 +187,7 @@ function Matching() {
         {shuffledDeck.map((card, index) => {
           return (
             <div
-              onClick={(event) => handleFlipCard(index)}
+              onClick={() => handleFlipCard(index)}
               key={index}
               className={
                 card.flipped ? "flip-card flip-card-flip" : "flip-card"

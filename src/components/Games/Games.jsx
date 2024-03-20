@@ -1,9 +1,10 @@
 import Typing from "../Typing/Typing";
 import Matching from "../Matching/Matching";
 import Math from "../Math/Math";
+import Maze from "../Maze/Maze";
 
 function Games(props) {
-  const games = ["typing", "matching", "math"];
+  const games = ["typing", "matching", "math", "maze"];
 
   const capitalizeFirstLetter = (str) => {
     let arr = Array.from(str);
@@ -33,6 +34,8 @@ function Games(props) {
     return <Matching />;
   } else if (props.currentGame === "math") {
     return <Math />;
+  } else if (props.currentGame === "maze") {
+    return <Maze />;
   }
 }
 

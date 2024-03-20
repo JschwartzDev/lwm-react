@@ -41,6 +41,7 @@
     min-height: 50vh;
     width: 50%;
 
+    border: 1px solid var(--sonic-gold);
     border-radius: 5px;
     background-color: var(--sonic-blue);
     color: var(--sonic-gold);
