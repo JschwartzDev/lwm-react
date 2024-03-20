@@ -1,3 +1,8 @@
+:root {
+  --tile-size: 7vh;
+  --player-size: calc(var(--tile-size) - 1vh);
+}
+
 .maze-wrapper {
   display: flex;
   justify-content: center;
@@ -14,10 +19,9 @@
     justify-content: center;
     align-items: center;
 
-    height: 50vh;
-    width: 100%;
-
-    border: 1px solid black;
+    /*game-wrapper is filpped and rotated, width is now height and so on*/
+    min-height: 50vh;
+    width: 50%;
 
     .rotate {
       transform: rotate3d(1, 0, 0, 180deg) rotate(-90deg);
@@ -30,6 +34,7 @@
 
       min-height: 50vh;
       width: 50%;
+      outline: none;
 
       border: 1px solid black;
 
@@ -38,28 +43,37 @@
         justify-content: center;
         align-items: center;
 
-        min-height: 10vh;
-        width: 10vh;
-
-        border: 1px solid black;
+        min-height: var(--tile-size);
+        width: var(--tile-size);
       }
 
       .player {
-        min-height: 9vh;
-        width: 9vh;
+        min-height: var(--player-size);
+        width: var(--player-size);
 
         border-radius: 50%;
         border: 1px solid var(--sonic-gold);
         background-color: var(--sonic-blue);
+
+        background-image: url("../../Assets/sonic-maze-image.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        transform: rotate3d(1, 0, 0, -180deg) rotate(300deg);
       }
 
       .goal {
-        min-height: 9vh;
-        width: 9vh;
+        min-height: var(--player-size);
+        width: var(--player-size);
 
         border-radius: 50%;
         border: 1px solid black;
-        background-color: purple;
+        background-image: url("../../Assets/tails-maze-image.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: var(--sonic-gold);
+
+        transform: rotate3d(1, 0, 0, -180deg) rotate(280deg);
       }
 
       .empty-tile {
@@ -67,7 +81,8 @@
       }
 
       .wall-tile {
-        background-color: maroon;
+        border: 1px solid var(--sonic-gold);
+        background-color: var(--sonic-blue);
       }
     }
   }

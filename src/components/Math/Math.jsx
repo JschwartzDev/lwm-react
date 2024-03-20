@@ -2,7 +2,7 @@ import { useState } from "react";
 import motoPicSonic from "../../Assets/moto-pic-sonic.png";
 import motoPicShadow from "../../Assets/moto-pic-shadow.png";
 
-function MathGame(props) {
+function MathGame() {
   const generateRandomNum = () => {
     return Math.floor(Math.random() * 10);
   };
