@@ -76,6 +76,62 @@
         transform: rotate3d(1, 0, 0, -180deg) rotate(280deg);
       }
 
+      .knuckles {
+        min-height: var(--player-size);
+        width: var(--player-size);
+
+        border-radius: 50%;
+        border: 1px solid black;
+        background-image: url("../../Assets/knuckles-maze-image.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: var(--knuckles-red);
+
+        transform: rotate3d(1, 0, 0, -180deg) rotate(280deg);
+      }
+
+      .shadow {
+        min-height: var(--player-size);
+        width: var(--player-size);
+
+        border-radius: 50%;
+        border: 1px solid black;
+        background-image: url("../../Assets/shadow-maze-image.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: var(--knuckles-red);
+
+        transform: rotate3d(1, 0, 0, -180deg) rotate(280deg);
+      }
+
+      .eggman {
+        min-height: var(--player-size);
+        width: var(--player-size);
+
+        border-radius: 50%;
+        border: 1px solid black;
+        background-image: url("../../Assets/eggman-maze-image.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: var(--knuckles-red);
+
+        transform: rotate3d(1, 0, 0, -180deg) rotate(280deg);
+      }
+
+      .tails {
+        min-height: var(--player-size);
+        width: var(--player-size);
+
+        border-radius: 50%;
+        border: 1px solid black;
+        background-image: url("../../Assets/tails-maze-image.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: var(--sonic-gold);
+
+        transform: rotate3d(1, 0, 0, -180deg) rotate(280deg);
+      }
+
       .empty-tile {
         background-color: lightgrey;
       }
@@ -83,6 +139,22 @@
       .wall-tile {
         border: 1px solid var(--sonic-gold);
         background-color: var(--sonic-blue);
+      }
+
+      .fake-wall {
+        background-color: lightgrey;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .maze-wrapper {
+    .map {
+      width: 90vh;
+      .tile {
+        max-width: 4vh;
+        max-height: 4vh;
       }
     }
   }
